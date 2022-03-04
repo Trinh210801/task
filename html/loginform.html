@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html"; charset=UTF-8"/>
+</head>
+<body> 
+        <div style="border:1px solid#ddd; padding:5px;">
+         <form method="POST" action="" onsubmit="return validate()">
+            <label> Username </label>
+            <input type="text" name="username" id="username"/>
+            <br><br>
+            <label> Password </label>
+            <input type="password" name="password" id="password"/>
+            <br><br>
+            <button type="submit">Login</button>
+            
+         </form>
+        </div>
+        
+        <script>
+        function validate()  {
+            var ten = document.getElementById("username").value;
+            var mk = document.getElementById("password").value;
+
+      var regexPass = /^[A-Z](?=.*\d)(?=.*[a-z])[0-9a-zA-Z]{8,}$/;
+            
+            if(ten == "" || ten.length <5 || ten.length >15){
+                alert("Không hợp lệ");
+                return false;
+            }
+            
+            if(mk.length<8 || mk.length >20 || !regexPass.test(mk)){
+                alert("Không hợp lệ!");
+                return false;
+            }
+            
+            alert("Dữ liệu đã gửi thành công!")
+            return true;
+        }
+    </script>
+        
+</body>
+</html>
