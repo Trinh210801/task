@@ -33,9 +33,6 @@ if (mysqli_num_rows(mysqli_query($conn,"
     }
 
 // kiểm tra định dạng email
-// $email = "asd/sdff@asdf.com"; 
-// $regex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/'; 
-// $email = (preg_match($regex, $email))? $email:"invalid email";
 if (!filter_var($email, FILTER_VALIDATE_EMAIL))
     {
         echo "Email này không hợp lệ! <a href='javascript: history.go(-1)'>Trở lại</a>";
