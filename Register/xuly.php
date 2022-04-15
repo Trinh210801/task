@@ -26,7 +26,7 @@ if (!$username || !$password || !$email || !$phone)
 
 // kiểm tra tên đăng nhập đã có người dùng chưa 
 if (mysqli_num_rows(mysqli_query($conn,"
-    SELECT username FROM user WHERE username='$username'")) > 0)
+    SELECT username FROM information_user WHERE username='$username'")) > 0)
     {
     echo "Tên đăng nhập đã có người dùng! <a href='javascript: history.go(-1)'>Trở lại</a>";
     exit;
@@ -41,7 +41,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL))
 
 // kiểm tra email ddã có người dùng chưa 
 if (mysqli_num_rows(mysqli_query($conn,"
-    SELECT email FROM user WHERE email='$email'")) > 0)
+    SELECT email FROM information_user WHERE email='$email'")) > 0)
     {
         echo "Email đã có người dùng! <a href='javascript: history.go(-1)'>Trở lại</a>";
         exit;
@@ -56,7 +56,7 @@ if (!preg_match("/(84|0[3|5|7|8|9])+([0-9]{8})\b/", $phone))
 
 // lưu thông tin thành viên 
 $addmember = mysqli_query($conn,"
-    select into user (username,password,email,phone)
+    insert into user (username,password,email,phone)
     values ('$username','$password','$email','$phone')
     ");
 
