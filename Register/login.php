@@ -26,7 +26,7 @@ if (isset($_POST['dangnhap']))
      
     //Kiểm tra tên đăng nhập có tồn tại không
     $query = mysqli_query($connect, "
-        SELECT username,password FROM user WHERE username='$username'
+        SELECT username,password FROM information_user WHERE username='$username'
         ");
     if (mysqli_num_rows($query) == 0) {
         echo "Tên đăng nhập này không tồn tại! <a href='javascript: history.go(-1)'>Trở lại</a>";
