@@ -21,7 +21,6 @@
                     <label> Phone : </label>
                     <input type="text" name="phone" size="10" />
                     <br></br>
-                </tr>
             </table>
             <input type="submit" name="dangky" value="Đăng ký" />
             <input type="reset" value="Nhập lại" />
